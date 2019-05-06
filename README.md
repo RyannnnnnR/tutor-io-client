@@ -1,4 +1,4 @@
-# tutoring-io-app
+# tutor-io-client
 
 ## Project setup
 ```
