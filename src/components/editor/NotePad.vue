@@ -1,30 +1,25 @@
-<template>
-  <div id="editor">
-  </div>
-</template>
-
 <script>
-import * as Quill from 'quill';
+import Quill from 'quill'
+
 export default {
-  name: "notepad",
-  mounted: () => {
-    var editor = new Quill("#editor", {
-      modules: {
-        toolbar: [
-          [{ header: [1, 2, false] }],
-          ["bold", "italic", "underline"],
-          ["image", "code-block"]
-        ]
-      },
-      placeholder: "Compose an epic...",
-      theme: "snow" // or 'bubble'
-    });
+  mounted () {
+    var quill = new Quill('#editor', {
+      theme: 'snow'
+    })
   }
-};
+}
 </script>
 
+<template>
+    <div id="editor">
+      <h1>Notes</h1>
+    </div>
+</template>
+
 <style lang="scss" scoped>
-#editor {
-  height: 30vh;
-}
+  #editor {
+    height: 100%;
+  }
 </style>
+
+<style src="quill/dist/quill.snow.css"></style>

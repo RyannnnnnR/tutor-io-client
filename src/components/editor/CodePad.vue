@@ -21,6 +21,6 @@ export default {
 
 <style lang="scss" scoped>
 #codepad {
-  height: 60vh;
+  height: 100%;
 }
 </style>
