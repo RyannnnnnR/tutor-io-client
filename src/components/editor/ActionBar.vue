@@ -1,5 +1,5 @@
 <template>
-  <div id="actionbar" class="flex">
+  <div id="actionbar" class="flex bg-charcoal">
     <button
       class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
     >
@@ -19,12 +19,12 @@
 
 <script>
 export default {
-  name: "actionbar"
-};
+  name: 'actionbar'
+}
 </script>
 
 <style lang="scss" scoped>
 #actionbar {
-  height: 42px;
+  height: 44px;
 }
 </style>

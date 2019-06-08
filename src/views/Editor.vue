@@ -1,15 +1,29 @@
 <template>
-    <div class="container flex">
-        <div class="w-1/2">
-        <div class="code-area">
-            <ActionBar />
-            <CodePad />
+    <div class="container">
+        <div class="flex">
+            <div class="w-1/2">
+            <div class="height-60">
+                <ActionBar />
+                <CodePad />
+            </div>
+            </div>
+            <div class="w-1/2">
+            <div class="height-60">
+                <NotePad />
+            </div>
+            </div>
         </div>
-        </div>
-        <div class="w-1/2">
-        <div class="notepad">
-            <NotePad />
-        </div>
+        <div class="flex">
+            <div class="w-1/2">
+            <div class="height-40">
+                <Console />
+            </div>
+            </div>
+            <div class="w-1/2">
+            <div class="height-40">
+                <Console />
+            </div>
+            </div>
         </div>
     </div>
 </template>
@@ -23,15 +37,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+body {
+    margin: 0;
+    padding: 0;
+}
     .container{
         max-width: 100vw;
         height: 100vh;
         max-height: 100vh;
     }
-    .code-area {
-        height: 50%;
+    .height-60 {
+        height: 60vh;
     }
-    .notepad {
-        height: 50%;
+    .height-40 {
+        height: 40vh;
     }
 </style>

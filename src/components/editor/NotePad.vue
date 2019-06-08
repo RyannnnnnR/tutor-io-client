@@ -16,10 +16,11 @@ export default {
     </div>
 </template>
 
+<style src="quill/dist/quill.snow.css"></style>
+
 <style lang="scss" scoped>
   #editor {
-    height: 100%;
+    height: calc(100% - 44px);
   }
-</style>
 
-<style src="quill/dist/quill.snow.css"></style>
+</style>

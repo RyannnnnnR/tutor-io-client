@@ -1,0 +1,32 @@
+$primary-blue: #2e53fc;
+$secondary-blue: #199aff;
+$light-blue: #63e2fd;
+$purple: #a23ef7;
+$gray: #b3bbc2;
+$charcoal: #2a2836;
+.bg-charcoal {
+    background-color: $charcoal;
+}
+
+.ql-container,
+.ql-toolbar {
+    background-color: $charcoal !important;
+    color: $gray;
+    border-color: darken($charcoal, 10%) !important;
+}
+
+.ql-toolbar {
+    background-color: darken($charcoal, 2%) !important;
+}
+
+.ql-stroke {
+    stroke: $gray !important;
+}
+
+.ql-fill {
+    fill: $gray !important;
+}
+
+.ql-picker-label {
+    color: $gray !important;
+}
