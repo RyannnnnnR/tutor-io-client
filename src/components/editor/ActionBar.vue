@@ -1,19 +1,30 @@
 <template>
-  <div id="actionbar" class="flex bg-charcoal">
+  <div id="actionbar" class="flex content-center justify-between flex-wrap bg-charcoal-dark text-base">
     <button
-      class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
+      class="bg-light-blue-dark hover:bg-secondary-blue text-white font-bold px-2 rounded h-8 w-24 mx-2"
     >
-      <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-        <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"></path>
-      </svg>
-      <span>Download</span>
+    <span class="py-2">
+      <span>Run</span>
+      <font-awesome-icon icon="caret-right" class="ml-3 mt-1"/>
+    </span>
     </button>
-    <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-  Button
-</button>
-   <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-  Button
-</button>
+    <div class="dropdown relative mr-1">
+      <button
+        class="bg-transparent border border-gray hover:bg-light-blue text-gray font-bold rounded h-8 w-40 mx-2"
+      >
+      <span class="py-2">
+        <span>JavaScript</span>
+        <font-awesome-icon icon="chevron-down" class="ml-4 text-xs"/>
+      </span>
+      </button>
+      <div class="dropdown-list text-center shadow-md z-50 text-white absolute mt-4" v-show="false">
+      <ul class=" bg-charcoal-light rounded-sm">
+        <li class="p-1">Python 3</li>
+        <li class="p-1">JavaScript</li>
+        <li class="p-1">Java</li>
+      </ul>
+    </div>
+    </div>
   </div>
 </template>
 
@@ -26,5 +37,26 @@ export default {
 <style lang="scss" scoped>
 #actionbar {
   height: 44px;
+}
+.dropdown-list {
+  &::after {
+    content: '';
+    position: absolute;
+    right: 30px;
+    top: -10px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid $charcoal-light;
+    z-index: -1;
+    
+  }
+  li:hover {
+    background-color: $light-blue-dark;
+    cursor: pointer;
+  }
+  min-width: 160px;
+  width: 200px;
 }
 </style>

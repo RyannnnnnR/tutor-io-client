@@ -1,22 +1,101 @@
 $primary-blue: #2e53fc;
 $secondary-blue: #199aff;
 $light-blue: #63e2fd;
+$light-blue-dark: #59cbe4;
 $purple: #a23ef7;
 $gray: #b3bbc2;
 $charcoal: #2a2836;
+$charcoal-light: #3f3e4a;
+$charcoal-dark: darken($charcoal, 2%);
+.bg-charcoal-light {
+    background-color: $charcoal-light;
+}
+
+.bg-charcoal-dark {
+    background-color: $charcoal-dark;
+}
+
 .bg-charcoal {
     background-color: $charcoal;
+}
+
+.bg-primary-blue {
+    background-color: $primary-blue;
+}
+
+.bg-secondary-blue {
+    background-color: $secondary-blue;
+}
+
+.bg-light-blue {
+    background-color: $light-blue;
+}
+
+.bg-light-blue-dark {
+    background-color: $light-blue-dark;
+}
+
+.bg-purple {
+    background-color: $purple;
+}
+
+.bg-gray {
+    background-color: $gray;
+}
+
+.text-gray {
+    color: $gray;
+}
+
+.text-charcoal {
+    color: $charcoal;
+}
+
+.text-light-blue {
+    color: $light-blue;
+}
+
+.text-light-blue-dark {
+    color: $light-blue-dark;
+}
+
+.text-primary-blue {
+    color: $primary-blue;
+}
+
+.text-secondary-blue {
+    color: $secondary-blue;
+}
+
+.border-light-blue {
+    border-color: $light-blue;
+}
+
+.border-light-blue-dark {
+    border-color: $light-blue-dark;
+}
+
+.border-light-blue {
+    border-color: $gray;
+}
+
+.border-primary-blue {
+    border-color: $primary-blue;
+}
+
+.border-secondary-blue {
+    border-color: $secondary-blue;
 }
 
 .ql-container,
 .ql-toolbar {
     background-color: $charcoal !important;
     color: $gray;
-    border-color: darken($charcoal, 10%) !important;
+    border-color: $charcoal-dark !important;
 }
 
 .ql-toolbar {
-    background-color: darken($charcoal, 2%) !important;
+    background-color: $charcoal-dark !important;
 }
 
 .ql-stroke {

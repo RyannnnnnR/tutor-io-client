@@ -17,11 +17,13 @@
             <div class="w-1/2">
             <div class="height-40">
                 <Console />
+                <ConsoleActionBar />
             </div>
             </div>
             <div class="w-1/2">
             <div class="height-40">
-                <Console />
+               <PeerDetails />
+               <PeerActionBar />
             </div>
             </div>
         </div>
