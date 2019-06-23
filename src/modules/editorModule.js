@@ -1,20 +1,32 @@
+import io from 'socket.io-client';
+import { getConnection } from '../utils/socketHandler'
+var socket = getConnection();
 export default {
     state: {
-        valueq: 'my value'
+        code: ['function x() {', '\tconsole.log("Hello world!");', '}'].join(
+            '\n'
+        )
     },
     getters: {
-        valueq: state => {
-            return state.valueq;
+        code: state => {
+            return state.code;
         }
     },
     mutations: {
-        updateValueq(state, payload) {
-            state.valueq = payload;
+        JOIN_ROOM(state, payload) {
+
+        },
+        UPDATE_EDITOR(state, payload) {
+            socket.emit('update', payload)
+            state.code = payload;
         }
     },
     actions: {
-        updateValueq({ commit }, payload) {
+        joinRoom({ commit }, payload) {
             commit('updateValueq', payload);
-        }
+        },
+        UPDATE_EDITOR({ commit }, payload) {
+            commit('UPDATE_EDITOR', payload);
+        },
     }
 };

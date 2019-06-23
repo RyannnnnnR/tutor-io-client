@@ -6,18 +6,17 @@ import Editor from './views/Editor.vue'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home
-    },
-    {
-      path: '/editor',
-      name: 'editor',
-      component: Editor
-    }
-  ]
+    mode: 'history',
+    base: process.env.BASE_URL,
+    routes: [{
+            path: '/',
+            name: 'home',
+            component: Home
+        },
+        {
+            path: '/editor/:id',
+            name: 'editor',
+            component: Editor
+        }
+    ]
 })
