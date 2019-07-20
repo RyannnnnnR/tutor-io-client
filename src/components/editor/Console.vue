@@ -22,7 +22,7 @@
 export default {
   name: 'console',
   mounted () {
-  },
+  }
 }
 </script>
 

@@ -12,17 +12,17 @@
 export default {
   name: 'home',
   computed: {
-    generateURL: function() {
-      var result = '';
-      var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-      var charactersLength = characters.length;
-      for ( var i = 0; i < 8; i++ ) {
-          result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    generateURL: function () {
+      var result = ''
+      var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+      var charactersLength = characters.length
+      for (var i = 0; i < 8; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength))
       }
       console.log(result)
-      return "editor/"+result;
+      return 'editor/' + result
     }
-  },
+  }
 }
 </script>
 <style lang="scss" scoped>

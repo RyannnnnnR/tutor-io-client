@@ -1,14 +1,15 @@
-import io from 'socket.io-client';
+import io from 'socket.io-client'
 import { getConnection } from '../utils/socketHandler'
-var socket = getConnection();
+var socket = getConnection()
 export default {
+    namespaced: true,
     state: {
-        code: ['function x() {', '\tconsole.log("Hello world!");', '}'].join(
-            '\n'
-        )
+        code: 'function hello() {\n\xa0\xa0console.log(\"Hello, World!\");\n}\nhello();',
+        languages: ["JavaScript", "Python", "Java"],
+        selectedLanguage: "JavaScript"
     },
     getters: {
-        code: state => {
+        code(state) {
             return state.code;
         }
     },
@@ -18,15 +19,23 @@ export default {
         },
         UPDATE_EDITOR(state, payload) {
             socket.emit('update', payload)
-            state.code = payload;
+            state.code = payload
+        },
+        UPDATE_SELECTED_LANGUAGE(state, payload) {
+            state.selectedLanguage = payload;
         }
+        // SYNC_EDITOR(state, p)
     },
     actions: {
         joinRoom({ commit }, payload) {
-            commit('updateValueq', payload);
+            commit('updateValueq', payload)
         },
         UPDATE_EDITOR({ commit }, payload) {
-            commit('UPDATE_EDITOR', payload);
+            commit('UPDATE_EDITOR', payload)
         },
+        UPDATE_SELECTED_LANGUAGE({ commit }, payload) {
+            commit("UPDATE_SELECTED_LANGUAGE", payload)
+        }
+        // SYNC_EDITOR
     }
-};
+}

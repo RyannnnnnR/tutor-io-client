@@ -28,14 +28,17 @@
 </template>
 
 <script>
-import components from "../components/editor";
-import io from "socket.io-client";
+import components from '../components/editor'
+import { getConnection } from '@/utils/socketHandler'
 export default {
-  name: "editor",
+  name: 'editor',
   components: components,
-  mounted() {
+  mounted () {
+    var socket = getConnection()
+    socket.emit('join', this.$route.params.id)
+    console.log('sent')
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

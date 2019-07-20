@@ -4,8 +4,8 @@ import Console from './Console'
 import PeerDetails from './PeerDetails'
 
 export default {
-    CodePad,
-    NotePad,
-    Console,
-    PeerDetails,
+  CodePad,
+  NotePad,
+  Console,
+  PeerDetails
 }

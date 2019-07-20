@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import editorModule from '@/modules/editorModule';
+import editorModule from '@/modules/editorModule'
 import consoleModule from '@/modules/consoleModule'
 Vue.use(Vuex)
 
