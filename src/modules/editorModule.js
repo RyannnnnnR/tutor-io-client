@@ -5,12 +5,12 @@ export default {
     namespaced: true,
     state: {
         code: 'function hello() {\n\xa0\xa0console.log(\"Hello, World!\");\n}\nhello();',
-        languages: ["JavaScript", "Python", "Java"],
-        selectedLanguage: "JavaScript"
+        languages: ['JavaScript', 'Python', 'Java'],
+        selectedLanguage: 'JavaScript'
     },
     getters: {
         code(state) {
-            return state.code;
+            return state.code
         }
     },
     mutations: {
@@ -22,9 +22,11 @@ export default {
             state.code = payload
         },
         UPDATE_SELECTED_LANGUAGE(state, payload) {
-            state.selectedLanguage = payload;
+            state.selectedLanguage = payload
+        },
+        SYNC_EDITOR(state, p) {
+
         }
-        // SYNC_EDITOR(state, p)
     },
     actions: {
         joinRoom({ commit }, payload) {
@@ -34,7 +36,7 @@ export default {
             commit('UPDATE_EDITOR', payload)
         },
         UPDATE_SELECTED_LANGUAGE({ commit }, payload) {
-            commit("UPDATE_SELECTED_LANGUAGE", payload)
+            commit('UPDATE_SELECTED_LANGUAGE', payload)
         }
         // SYNC_EDITOR
     }

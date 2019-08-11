@@ -29,6 +29,7 @@
 
 <script>
 import components from '../components/editor'
+import Peer from 'peerjs'
 import { getConnection } from '@/utils/socketHandler'
 export default {
   name: 'editor',
@@ -37,6 +38,7 @@ export default {
     var socket = getConnection()
     socket.emit('join', this.$route.params.id)
     console.log('sent')
+    var client = new Peer();
   }
 }
 </script>

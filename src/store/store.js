@@ -5,8 +5,8 @@ import consoleModule from '@/modules/consoleModule'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-    modules: {
-        editor: editorModule,
-        console: consoleModule
-    }
+  modules: {
+    editor: editorModule,
+    console: consoleModule
+  }
 })

@@ -26,7 +26,7 @@
     </div>
     </div>
   </div>
-  <div id="code-area" @keyup="update">
+  <div id="code-area" @keyup="handleKeyPress($event)">
   </div>
   </div>
 </template>
@@ -58,16 +58,15 @@ export default {
       current: '',
       socket: getConnection(),
       isDropdownShown: false,
-      editor: null,
     }
   },
-   computed: mapState('editor',[
+  computed: mapState('editor', [
     'code',
     'selectedLanguage',
     'languages'
-   ]),
+  ]),
   mounted () {
-    this.editor = CodeMirror(document.getElementById('code-area'), {
+    window.editor = CodeMirror(document.getElementById('code-area'), {
       lineNumbers: true,
       value: this.code,
       mode: this.selectedLanguage.toLowerCase(),
@@ -75,40 +74,49 @@ export default {
       matchBrackets: true
 
     })
-    var server
-    server = new CodeMirror.TernServer({ defs: [ecma] })
-    this.editor.setOption('extraKeys', {
-      'Ctrl-Space': function (cm) { server.complete(cm) },
-      'Ctrl-I': function (cm) { server.showType(cm) },
-      'Ctrl-O': function (cm) { server.showDocs(cm) },
-      'Alt-.': function (cm) { server.jumpToDef(cm) },
-      'Alt-,': function (cm) { server.jumpBack(cm) },
-      'Ctrl-Q': function (cm) { server.rename(cm) },
-      'Ctrl-.': function (cm) { server.selectName(cm) }
-    })
-    this.editor.on('cursorActivity', function (cm) { server.updateArgHints(cm) })
-    this.editor.on('keyup', function (cm, event) {
-      if (event.key == '.') {
-        server.complete(cm)
+    window.server = new CodeMirror.TernServer({ defs: [ecma] })
+    console.log(this.server)
+    if(window.server) {
+      window.editor.setOption('extraKeys', {
+        'Ctrl-Space': function (cm) { window.server.complete(cm) },
+        'Ctrl-I': function (cm) { window.server.showType(cm) },
+        'Ctrl-O': function (cm) { window.server.showDocs(cm) },
+        'Alt-.': function (cm) { window.server.jumpToDef(cm) },
+        'Alt-,': function (cm) { window.server.jumpBack(cm) },
+        'Ctrl-Q': function (cm) { window.server.rename(cm) },
+        'Ctrl-.': function (cm) { window.server.selectName(cm) }
+      })
+      window.editor.on('cursorActivity', function (cm) { window.server.updateArgHints(cm) })
+    }
+    this.socket.on('sync', function(payload){
+       if(this.code != window.editor.getDoc().getValue()) {
+        window.editor.getDoc().setValue(payload);
       }
-    })
+    });
   },
   methods: {
-    update () {
+    handleKeyPress (event) {
+      if(window.server && event.key == '.') {
+        window.server.complete(window.editor);
+      }
+      if(this.current != window.editor.getValue()) {
+        this.current = window.editor.getValue();
+        this.$store.dispatch('editor/UPDATE_EDITOR', this.current)
+      }
     },
-    toggleDropdown() {
-      this.isDropdownShown = !this.isDropdownShown;
+    toggleDropdown () {
+      this.isDropdownShown = !this.isDropdownShown
     },
-    changeLanguage(langauge) {
-      if(this.selectedLanguage != langauge){
+    changeLanguage (langauge) {
+      if (this.selectedLanguage != langauge) {
         var selected = languageRepo[langauge.toLowerCase()]
-        this.editor.getDoc().setValue(selected.code)
-        this.editor.setOption('mode',selected.mode)
-        this.$store.dispatch("editor/UPDATE_SELECTED_LANGUAGE", langauge)
+        window.editor.getDoc().setValue(selected.code)
+        window.editor.setOption('mode', selected.mode)
+        window.$store.dispatch('editor/UPDATE_SELECTED_LANGUAGE', langauge)
       }
       this.toggleDropdown()
     }
-  },
+  }
 }
 </script>
 
