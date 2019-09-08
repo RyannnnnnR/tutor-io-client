@@ -1,18 +1,14 @@
 <template>
   <div class="container">
-    <div class="flex">
+    <div class="flex h-full">
       <div class="w-1/2">
-        <div class="height-60">
           <CodePad/>
-        </div>
       </div>
       <div class="w-1/2">
-        <div class="height-60">
-          <NotePad/>
-        </div>
+          <Utilities />
       </div>
     </div>
-    <div class="flex">
+    <!-- <div class="flex">
       <div class="w-1/2">
         <div class="height-40">
           <Console/>
@@ -23,10 +19,10 @@
           <PeerDetails/>
         </div>
       </div>
+    </div> -->
     </div>
   </div>
 </template>
-
 <script>
 import components from '../components/editor'
 import Peer from 'peerjs'
@@ -38,11 +34,10 @@ export default {
     var socket = getConnection()
     socket.emit('join', this.$route.params.id)
     console.log('sent')
-    var client = new Peer();
+    var client = new Peer()
   }
 }
 </script>
-
 <style lang="scss" scoped>
 body {
   margin: 0;

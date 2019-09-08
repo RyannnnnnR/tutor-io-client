@@ -59,11 +59,12 @@
 
 .cm-s-light-table.CodeMirror .CodeMirror-gutters {
     border-color: $charcoal-dark;
-    background: $charcoal-dark;
+    background: $charcoal;
 }
 
 .cm-s-light-table.CodeMirror .CodeMirror-linenumbers {
-    background-color: $charcoal-dark;
+    background-color: $charcoal;
+    padding-right: 8px;
 }
 
 .cm-s-light-table.CodeMirror .CodeMirror-linenumber {

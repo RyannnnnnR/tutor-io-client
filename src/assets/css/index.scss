@@ -1,5 +1,9 @@
 @import "../themes/editor-theme.scss";
 @import "../partials/variables";
+// <style src="codemirror/theme/dracula.css"></style>
+// <style src="codemirror/addon/hint/show-hint.css"></style>
+// <style src="codemirror/addon/tern/tern.css"></style>
+// <style src="codemirror/addon/dialog/dialog.css"></style>
 .bg-charcoal-light {
     background-color: $charcoal-light;
 }
@@ -107,5 +111,5 @@
     width: 100% !important;
     height: 100% !important;
     padding-left: 0 !important;
-    font-size: 14px !important;
+    font-size: 16px !important;
 }

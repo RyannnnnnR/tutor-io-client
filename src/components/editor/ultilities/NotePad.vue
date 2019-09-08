@@ -16,8 +16,6 @@ export default {
     </div>
 </template>
 
-<style src="quill/dist/quill.snow.css"></style>
-
 <style lang="scss" scoped>
   #editor {
     height: calc(100% - 44px);

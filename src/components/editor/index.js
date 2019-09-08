@@ -1,11 +1,7 @@
 import CodePad from './CodePad'
-import NotePad from './NotePad'
-import Console from './Console'
-import PeerDetails from './PeerDetails'
+import Utilities from './ultilities/Ultilities'
 
 export default {
   CodePad,
-  NotePad,
-  Console,
-  PeerDetails
+  Utilities
 }
