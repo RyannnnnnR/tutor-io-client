@@ -8,19 +8,6 @@
           <Utilities />
       </div>
     </div>
-    <!-- <div class="flex">
-      <div class="w-1/2">
-        <div class="height-40">
-          <Console/>
-        </div>
-      </div>
-      <div class="w-1/2">
-        <div class="height-40">
-          <PeerDetails/>
-        </div>
-      </div>
-    </div> -->
-    </div>
   </div>
 </template>
 <script>

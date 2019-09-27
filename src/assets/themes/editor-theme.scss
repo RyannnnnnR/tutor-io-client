@@ -100,27 +100,35 @@
 }
 
 .cm-s-light-table.CodeMirror .cm-comment {
-    color: $gray;
+    color: #A0AEC0;
 }
 
 .cm-s-light-table.CodeMirror .cm-property {
-    color: #fff;
+    color: #FAF089;
 }
 
 .cm-s-light-table.CodeMirror .cm-qualifier {
-    color: #aaeeab;
+    color: #68D391;
 }
 
 .cm-s-light-table.CodeMirror .cm-tag {
-    color: #7ac1ff;
+    color: #90CDF4;
+}
+
+.cm-s-light-table.CodeMirror .cm-type {
+    color: #FAF089;
+}
+
+.cm-s-light-table.CodeMirror .cm-builtin {
+    color: #FAF089;
 }
 
 .cm-s-light-table.CodeMirror .cm-def {
-    color: #fbe69f;
+    color: #81E6D9;
 }
 
 .cm-s-light-table.CodeMirror .cm-number {
-    color: #83e1b2;
+    color: #BEE3F8;
 }
 
 .cm-s-light-table.CodeMirror .cm-atom {
@@ -128,19 +136,19 @@
 }
 
 .cm-s-light-table.CodeMirror .cm-keyword {
-    color: $purple-light;
+    color: #D6BCFA;
 }
 
 .cm-s-light-table.CodeMirror .cm-string {
-    color: #aaccff;
+    color: #BEE3F8;
 }
 
 .cm-s-light-table.CodeMirror .cm-string-2 {
-    color: #ccd7d8;
+    color: #E2E8F0;
 }
 
 .cm-s-light-table.CodeMirror .cm-variable {
-    color: $light-blue;
+    color: #81E6D9;
 }
 
 .cm-s-light-table.CodeMirror .cm-variable-2 {

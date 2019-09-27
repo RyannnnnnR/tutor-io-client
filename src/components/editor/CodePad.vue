@@ -1,11 +1,11 @@
 <template>
   <div id="codepad">
-    <div id="code-action-bar" class="flex content-center justify-between flex-wrap bg-charcoal-dark text-base h-12">
+    <div id="code-action-bar" class="flex content-center justify-between flex-wrap bg-charcoal-dark text-base h-12 py-3">
     <button
       class="bg-gray-700 hover:bg-secondary-blue text-white px-6 py-1 rounded  mx-3"
     >
     <div class="flex items-center">
-      <span class="font-normal">Run</span>
+      <span>Run</span>
       <font-awesome-icon icon="play" class="text-gray-500 ml-3 text-xs"/>
     </div>
     </button>

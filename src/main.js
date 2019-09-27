@@ -4,13 +4,13 @@ import router from './router'
 import store from './store/store'
 import '@/assets/css/tailwind.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faChevronDown, faTerminal, faChalkboard, faUserFriends, faStickyNote, faUndo, faPlay, faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
+import { faChevronDown, faTerminal, faChalkboard, faUserFriends, faStickyNote, faUndo, faPlay, faCog, faEraser, faFilePdf, faArrowCircleUp } from '@fortawesome/free-solid-svg-icons'
 import { faNodeJs } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import 'quill/dist/quill.snow.css'
 import 'codemirror/lib/codemirror.css'
 
-library.add(faPlay, faChevronDown, faTerminal, faChalkboard, faUserFriends, faStickyNote, faUndo, faPhoneAlt, faNodeJs)
+library.add(faPlay, faChevronDown, faTerminal, faChalkboard, faFilePdf, faStickyNote, faUndo, faCog, faNodeJs, faEraser, faArrowCircleUp)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
